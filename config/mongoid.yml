@@ -1,0 +1,15 @@
+defaults: &defaults
+  host: localhost
+
+development:
+  <<: *defaults
+  database: new_leftclick
+
+test:
+  <<: *defaults
+  database: new_leftclick_test
+
+production:
+  <<: *defaults
+  database: new_leftclick
+

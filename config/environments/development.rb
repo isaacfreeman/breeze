@@ -23,15 +23,32 @@ Experiment::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   # Raise exception on mass assignment protection for Active Record models
-  config.active_record.mass_assignment_sanitizer = :strict
+  #config.active_record.mass_assignment_sanitizer = :strict
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
-  config.active_record.auto_explain_threshold_in_seconds = 0.5
+  #config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Do not compress assets
   config.assets.compress = false
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.middleware.use ExceptionNotifier,
+    :email_prefix => "[NewBreeze] ",
+    :sender_address => %{"notifier" <notifier@example.com>},
+    :exception_recipients => %w{blair@leftclick.com}
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
+    :port           => "25",
+    :authentication => :plain,
+    :user_name      => 'breezehq@leftclick.com',
+    :password       => 'eleph@nt145',
+    :domain         => 'leftclick.com'
+  }
+
+  
 end

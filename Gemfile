@@ -5,7 +5,7 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -21,6 +21,29 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem "RubyInline"
+gem "colored"
+gem "bson_ext" #, "1.0.4"
+gem "mongoid"
+gem "devise" #, "1.1.rc2"
+gem "rdiscount"
+gem "haml"
+gem "rmagick"
+gem "carrierwave" #, "0.5.0.beta2"
+gem "cancan"
+gem "mongo_session_store" #, "2.0.0.pre"
+gem "premailer"
+gem "unicorn"
+gem "defender"
+gem "resque"
+gem "will_paginate", "3.0.pre2"
+
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+
+gem "pry"
+gem "pry-rails"
+gem "exception_notification"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
