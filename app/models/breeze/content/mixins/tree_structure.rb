@@ -78,7 +78,6 @@ module Breeze
       protected
 
         def set_position
-          # self.position ||= scope.count
           self.position = scope.count if self.position == 0
           update_sibling_positions 1, self.position - 1
         end
